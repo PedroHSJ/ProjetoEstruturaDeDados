@@ -4,7 +4,7 @@ from Baralho import Baralho
 import random
 
 print('''
-               Bem vindo ao jogo Batalha  
+               ----Bem vindo ao jogo Batalha---  
 Regras do jogo:
 1. Divide-se as cartas do baralho, igualmente, para dois jogadores. 
 2. A menor carta é o Ás e a maior do baralho é o Rei. 
