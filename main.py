@@ -3,7 +3,6 @@ from Jogador import Jogador
 from Baralho import Baralho
 import random
 
-print("teste")
 print('''
       -------------------- Bem vindo ao jogo Batalha --------------------
 
