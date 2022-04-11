@@ -81,9 +81,8 @@ while (True):
             if(not montanteDeEmpate.estaVazia()):
                 print(montanteDeEmpate.imprime())
                   
-
-            for carta in range(montanteDeEmpate.tamanho()):
-                jogador1.montanteReserva.empilha(montanteDeEmpate.desempilha())
+                for n in range(montanteDeEmpate.tamanho()):
+                    jogador1.montanteReserva.empilha(montanteDeEmpate.desempilha())
             
 
         elif(numeroDaCartaDoJogador1 < numeroDaCartaDoJogador2):
@@ -104,9 +103,8 @@ while (True):
             if(not montanteDeEmpate.estaVazia()):
                 print(montanteDeEmpate.imprime())
                   
-
-            for carta in range(montanteDeEmpate.tamanho()):
-                jogador2.montanteReserva.empilha(montanteDeEmpate.desempilha())
+                for n in range(montanteDeEmpate.tamanho()):
+                    jogador2.montanteReserva.empilha(montanteDeEmpate.desempilha())
 
         elif(numeroDaCartaDoJogador1 == numeroDaCartaDoJogador2):
             print(f"Carta na mão do jogador(ar) {jogador1.nome.upper()}: {cartaNaMaoDoJogador1}")
@@ -139,8 +137,8 @@ while (True):
                 carta = jogador2.montanteReserva.desempilha()
                 jogador2.cartasDoJogador.empilha(carta)
 
-        # print("PRESSIONE ENTER PARA CONTINUAR")
-        # input()
+        print("PRESSIONE ENTER PARA CONTINUAR")
+        input()
 
     if(jogador1.pontos > jogador2.pontos):
         print(f'JOGADOR(AR) {jogador1.nome.upper()} VENCEU A PARTIDA!!!')
