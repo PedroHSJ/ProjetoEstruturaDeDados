@@ -26,6 +26,7 @@ while (True):
     
     contadorDeRodadas = 0
     baralho = Baralho()
+    baralho.embaralhar()
     montanteDeEmpate = Pilha()
 
     #Instanciando os dois jogadores
@@ -41,7 +42,7 @@ while (True):
 
     
     #Distribuindo as cartas
-    tamanho_do_baralho = baralho.__len__() 
+    tamanho_do_baralho = baralho = len (baralho)
     metadeDoBaralho = (tamanho_do_baralho - 1) / 2 
     n = 0
 
@@ -89,11 +90,11 @@ while (True):
             jogador2.pontos += 1
             jogador2.montanteReserva.empilha(cartaNaMaoDoJogador1) #Carta recebida em caso de vitoria vai para outro montante
 
-            print(f"Carta na mão do jogador(ar) {jogador1.nome.upper()}: {cartaNaMaoDoJogador1}")
-            print(f"Carta na mão do jogador(ar) {jogador2.nome.upper()}: {cartaNaMaoDoJogador2}")
+            print(f"Carta na mão do jogador(a) {jogador1.nome.upper()}: {cartaNaMaoDoJogador1}")
+            print(f"Carta na mão do jogador(a) {jogador2.nome.upper()}: {cartaNaMaoDoJogador2}")
             
             print()
-            print(f"Ponto para o jogador(ar) {jogador2.nome.upper()}")
+            print(f"Ponto para o jogador(a) {jogador2.nome.upper()}")
 
             print()
             print(f"Carta adquirida: \n{cartaNaMaoDoJogador1}")
@@ -107,8 +108,8 @@ while (True):
                     jogador2.montanteReserva.empilha(montanteDeEmpate.desempilha())
 
         elif(numeroDaCartaDoJogador1 == numeroDaCartaDoJogador2):
-            print(f"Carta na mão do jogador(ar) {jogador1.nome.upper()}: {cartaNaMaoDoJogador1}")
-            print(f"Carta na mão do jogador(ar) {jogador2.nome.upper()}: {cartaNaMaoDoJogador2}\n")
+            print(f"Carta na mão do jogador(a) {jogador1.nome.upper()}: {cartaNaMaoDoJogador1}")
+            print(f"Carta na mão do jogador(a) {jogador2.nome.upper()}: {cartaNaMaoDoJogador2}\n")
             print("EMPATE")
             montanteDeEmpate.empilha(cartaNaMaoDoJogador1)
             montanteDeEmpate.empilha(cartaNaMaoDoJogador2)
@@ -141,9 +142,9 @@ while (True):
         input()
 
     if(jogador1.pontos > jogador2.pontos):
-        print(f'JOGADOR(AR) {jogador1.nome.upper()} VENCEU A PARTIDA!!!')
+        print(f'JOGADOR(A) {jogador1.nome.upper()} VENCEU A PARTIDA!!!')
     elif(jogador2.pontos > jogador1.pontos):
-        print(f'JOGADOR(AR) {jogador2.nome.upper()} VENCEU A PARTIDA!!!')
+        print(f'JOGADOR(A) {jogador2.nome.upper()} VENCEU A PARTIDA!!!')
 
     #Verifica se o usuário gostaria de jogar novamente.
     print()
