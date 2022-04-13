@@ -37,7 +37,6 @@ while (True):
     nomeDoJogador2 = input("Digite o nome do jogador(a) 2: ")
     jogador2 = Jogador(nomeDoJogador2)
     print()
-
     
     # Distribuindo as cartas
     tamanho_do_baralho = len(baralho)
