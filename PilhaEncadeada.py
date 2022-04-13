@@ -88,7 +88,11 @@ class Pilha:
     def __str__(self):
         cursor = self.__head
         primeiro = True
+<<<<<<< HEAD
         s = 'Topo da pilha ->['
+=======
+        s = 'topo->['
+>>>>>>> 4ffe0944bfa6dc45099ad8140770e35abaf33d1d
         while( cursor != None):
             if primeiro:
                 s += f'{cursor.dado}'

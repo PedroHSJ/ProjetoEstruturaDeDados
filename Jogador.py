@@ -11,7 +11,11 @@ class Jogador:
         self.__nome = nome 
         self.pontos = 0
         self.cartasDoJogador = Pilha()
+<<<<<<< HEAD
         self.montanteReserva = Pilha()
+=======
+        self.montanteReserva = list()
+>>>>>>> 4ffe0944bfa6dc45099ad8140770e35abaf33d1d
 
     def __str__(self):
         return "Nome do jogador: " + self.__nome + "\n" + "Cartas: \n" + self.cartasDoJogador.__str__()

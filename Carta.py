@@ -12,6 +12,7 @@ class Carta:
     def numero(self):
         return self.__numero
         
+<<<<<<< HEAD
     def converterParaNumero(self):
         if (self.numero == "As"):
             return 1
@@ -39,10 +40,19 @@ class Carta:
             return 12
         elif (self.numero == "Rei"):
             return 13
+=======
+         
+>>>>>>> 4ffe0944bfa6dc45099ad8140770e35abaf33d1d
 
     
     def __str__(self): # todas as informacoes da carta
         return f'{self.__numero} de {self.__naipe}'
+<<<<<<< HEAD
+=======
+
+    def __gt__(self, outraCarta):
+        return self.numero > outraCarta.numero
+>>>>>>> 4ffe0944bfa6dc45099ad8140770e35abaf33d1d
     
     def __eq__(self, outraCarta):
         return self.numero == outraCarta.numero
