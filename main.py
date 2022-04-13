@@ -1,3 +1,4 @@
+from re import A
 from PilhaEncadeada import Pilha
 from Jogador import Jogador
 from Baralho import Baralho
@@ -20,21 +21,21 @@ Regras do jogo:
 ''')
 
 print("---------- Batalha ---------- \n")
-
+jogar = True
 #Loop principal
-while (True):
+while (jogar):
     
     contadorDeRodadas = 0
     baralho = Baralho()
     montanteDeEmpate = Pilha()
 
     #Instanciando os dois jogadores
-    print("Digite o nome do jogador(ar) 1")
+    print("Digite o nome do jogador(a) 1")
     nomeDoJogador1 = input()
     jogador1 = Jogador(nomeDoJogador1)
     print()
 
-    print("Digite o nome do jogador(ar) 2")
+    print("Digite o nome do jogador(a) 2")
     nomeDoJogador2 = input()
     jogador2 = Jogador(nomeDoJogador2)
     print()
@@ -67,11 +68,11 @@ while (True):
             jogador1.pontos += 1
             jogador1.montanteReserva.empilha(cartaNaMaoDoJogador2) #Carta recebida em caso de vitoria vai para outro montante
 
-            print(f"Carta na mão do jogador(ar) {jogador1.nome.upper()}: {cartaNaMaoDoJogador1}")
-            print(f"Carta na mão do jogador(ar) {jogador2.nome.upper()}: {cartaNaMaoDoJogador2}")
+            print(f"Carta na mão do jogador(a) {jogador1.nome.upper()}: {cartaNaMaoDoJogador1}")
+            print(f"Carta na mão do jogador(a) {jogador2.nome.upper()}: {cartaNaMaoDoJogador2}")
 
             print()
-            print(f"Ponto para o jogador(ar) {jogador1.nome.upper()}")
+            print(f"Ponto para o jogador(a) {jogador1.nome.upper()}")
             
             print()
             print(f"Carta adquirida: \n{cartaNaMaoDoJogador2}")
@@ -89,11 +90,11 @@ while (True):
             jogador2.pontos += 1
             jogador2.montanteReserva.empilha(cartaNaMaoDoJogador1) #Carta recebida em caso de vitoria vai para outro montante
 
-            print(f"Carta na mão do jogador(ar) {jogador1.nome.upper()}: {cartaNaMaoDoJogador1}")
-            print(f"Carta na mão do jogador(ar) {jogador2.nome.upper()}: {cartaNaMaoDoJogador2}")
+            print(f"Carta na mão do jogador(a) {jogador1.nome.upper()}: {cartaNaMaoDoJogador1}")
+            print(f"Carta na mão do jogador(a) {jogador2.nome.upper()}: {cartaNaMaoDoJogador2}")
             
             print()
-            print(f"Ponto para o jogador(ar) {jogador2.nome.upper()}")
+            print(f"Ponto para o jogador(a) {jogador2.nome.upper()}")
 
             print()
             print(f"Carta adquirida: \n{cartaNaMaoDoJogador1}")
@@ -107,8 +108,8 @@ while (True):
                     jogador2.montanteReserva.empilha(montanteDeEmpate.desempilha())
 
         elif(numeroDaCartaDoJogador1 == numeroDaCartaDoJogador2):
-            print(f"Carta na mão do jogador(ar) {jogador1.nome.upper()}: {cartaNaMaoDoJogador1}")
-            print(f"Carta na mão do jogador(ar) {jogador2.nome.upper()}: {cartaNaMaoDoJogador2}\n")
+            print(f"Carta na mão do jogador(a) {jogador1.nome.upper()}: {cartaNaMaoDoJogador1}")
+            print(f"Carta na mão do jogador(a) {jogador2.nome.upper()}: {cartaNaMaoDoJogador2}\n")
             print("EMPATE")
             montanteDeEmpate.empilha(cartaNaMaoDoJogador1)
             montanteDeEmpate.empilha(cartaNaMaoDoJogador2)
@@ -141,18 +142,32 @@ while (True):
         input()
 
     if(jogador1.pontos > jogador2.pontos):
-        print(f'JOGADOR(AR) {jogador1.nome.upper()} VENCEU A PARTIDA!!!')
+        print(f'JOGADOR(A) {jogador1.nome.upper()} VENCEU A PARTIDA!!!')
     elif(jogador2.pontos > jogador1.pontos):
-        print(f'JOGADOR(AR) {jogador2.nome.upper()} VENCEU A PARTIDA!!!')
+        print(f'JOGADOR(A) {jogador2.nome.upper()} VENCEU A PARTIDA!!!')
 
-    #Verifica se o usuário gostaria de jogar novamente.
+    
+
+
+    
+    #Verifica se o usuário gostaria de jogar novamente.    
     print()
     print("Deseja jogar novamente? (s/n)")
     jogarNovamente = input()
 
-    
+    while (jogarNovamente.upper() != 'S' and jogarNovamente.upper() != 'N' ):
+        print('Entrada inválida')
+        print("Deseja jogar novamente? (s/n)")
+        jogarNovamente = input()    
 
-    if (jogarNovamente.upper() == 'N'):
-        break
+    if (jogarNovamente.upper() == 'S'):
+            jogar = True    
+
+    elif (jogarNovamente.upper() == 'N'):
+            print('Programa encerrado')
+            jogar = False
+        
+
+
        
 
